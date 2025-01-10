@@ -5,7 +5,9 @@ from book import Book
 
 class Library(Book):
     def __init__(self, books):
-        self.books = books
+        self.books = []
+        for book in books:
+            self.books.append(book)
         
     def add_book(self, Book):
         self.books.append(Book.title)
