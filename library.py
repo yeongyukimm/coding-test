@@ -6,11 +6,11 @@ from book import Book
 class Library(Book):
     def __init__(self, books):
         self.books = []
-        for book in books:
-            self.books.append(book)
+        # for book in books:
+        #     self.books.append(book)
         
     def add_book(self, Book):
-        self.books.append(Book.title)
+        self.books.append(Book)
         print(f"'{Book.title}'이(가) 도서 목록에 추가되었습니다.")
 
     def delete_book(self, isbn):
@@ -21,7 +21,7 @@ class Library(Book):
         print(f"ISBN {isbn}인 도서를 찾을 수 없습니다.")
 
     def find_book(self, keyword):
-        results = [book for book in self.books if keyword in (book.title, book.author, book.isbn)]
+        results = [book.title for book in self.books if keyword in (book.title, book.author, book.isbn)]
         if results:
             print(f"'{keyword}'에 대한 검색 결과:")
             for book in results:
